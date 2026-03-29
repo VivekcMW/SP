@@ -417,17 +417,36 @@ backToTop.addEventListener('click', function() {
 // ===== Mobile Navigation =====
 var navToggle = document.getElementById('navToggle');
 var nav = document.getElementById('nav');
+var navOverlay = document.getElementById('navOverlay');
+
+function closeNav() {
+    nav.classList.remove('open');
+    navToggle.classList.remove('active');
+    if (navOverlay) navOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+function openNav() {
+    nav.classList.add('open');
+    navToggle.classList.add('active');
+    if (navOverlay) navOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
 
 navToggle.addEventListener('click', function() {
-    nav.classList.toggle('open');
-    navToggle.classList.toggle('active');
+    if (nav.classList.contains('open')) {
+        closeNav();
+    } else {
+        openNav();
+    }
 });
 
+if (navOverlay) {
+    navOverlay.addEventListener('click', closeNav);
+}
+
 document.querySelectorAll('.nav-link, .nav-cta').forEach(function(link) {
-    link.addEventListener('click', function() {
-        nav.classList.remove('open');
-        navToggle.classList.remove('active');
-    });
+    link.addEventListener('click', closeNav);
 });
 
 // ===== Parallax Effect =====
