@@ -1914,6 +1914,170 @@ ul { list-style: none; }
     }
 }
 
+/* ===== Story Section: The Spark That Changes Everything ===== */
+.story-section {
+    height: 500vh;
+    position: relative;
+    background: #0a0f1e;
+}
+
+.story-sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.story-canvas-wrap {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.story-canvas {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    max-height: 80vh;
+}
+
+/* Text overlays */
+.story-text-container {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.story-text {
+    position: absolute;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    padding: 0 20px;
+}
+
+.story-text.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.story-chapter {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+    opacity: 0.8;
+}
+
+.story-text h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.4;
+    letter-spacing: -0.5px;
+}
+
+.story-text h3 em {
+    font-style: normal;
+    font-weight: 700;
+    color: #fff;
+}
+
+.story-final {
+    font-size: 2.8rem !important;
+    font-weight: 400 !important;
+}
+
+.story-final em {
+    color: var(--accent) !important;
+}
+
+/* Progress bar */
+.story-progress {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 3px;
+    z-index: 10;
+}
+
+.story-progress-bar {
+    width: 100%;
+    height: 0%;
+    background: var(--accent);
+    border-radius: 3px;
+    transition: height 0.1s linear;
+}
+
+/* Scroll hint */
+.story-scroll-hint {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 0.78rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    z-index: 10;
+    transition: opacity 0.5s ease;
+}
+
+.story-scroll-hint svg {
+    animation: storyBounce 2s ease-in-out infinite;
+}
+
+@keyframes storyBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+}
+
+.story-scroll-hint.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Story responsive */
+@media (max-width: 768px) {
+    .story-section { height: 400vh; }
+    .story-text h3 { font-size: 1.6rem; }
+    .story-final { font-size: 1.9rem !important; }
+    .story-chapter { font-size: 0.65rem; }
+    .story-canvas-wrap { padding: 20px; }
+    .story-progress { right: 15px; height: 150px; }
+}
+
+@media (max-width: 480px) {
+    .story-section { height: 350vh; }
+    .story-text h3 { font-size: 1.3rem; }
+    .story-final { font-size: 1.5rem !important; }
+    .story-progress { display: none; }
+    .story-scroll-hint { font-size: 0.7rem; }
+}
+
 /* ===== Scroll Animations ===== */
 [data-animate] {
     opacity: 0;

@@ -779,4 +779,291 @@ if (newsletterForm) {
         }
     });
 })();
+
+// ===== Story: The Spark That Changes Everything =====
+(function() {
+    var section = document.getElementById('storySection');
+    if (!section || typeof anime === 'undefined') return;
+
+    var progressBar = document.getElementById('storyProgressBar');
+    var scrollHint = document.getElementById('storyScrollHint');
+    var storyTexts = document.querySelectorAll('.story-text');
+    var hasStarted = false;
+
+    // Build the master timeline (paused — we drive it via scroll)
+    var tl = anime.timeline({
+        autoplay: false,
+        easing: 'easeOutExpo'
+    });
+
+    // ---- SCENE 1: THE SPARK (0-800ms) ----
+    tl.add({
+        targets: '.story-spark',
+        opacity: [0, 1],
+        r: [0, 6],
+        duration: 400,
+        easing: 'easeOutQuad'
+    })
+    .add({
+        targets: '.story-glow',
+        opacity: [0, 0.6],
+        r: [5, 30],
+        duration: 500,
+        easing: 'easeOutSine'
+    }, 200)
+    .add({
+        targets: '.story-glow-2',
+        opacity: [0, 0.3],
+        r: [10, 55],
+        duration: 500,
+        easing: 'easeOutSine'
+    }, 300)
+    .add({
+        targets: '.story-spark',
+        r: [6, 8, 6],
+        opacity: [1, 0.7, 1],
+        duration: 400,
+        easing: 'easeInOutSine'
+    }, 600)
+
+    // ---- SCENE 2: BRANCHES GROW (800-1800ms) ----
+    .add({
+        targets: '.story-branch',
+        strokeDashoffset: [170, 0],
+        opacity: [0.3, 0.8],
+        duration: 600,
+        delay: anime.stagger(80),
+        easing: 'easeInOutQuad'
+    }, 800)
+
+    // ---- SCENE 3: KNOWLEDGE BLOOMS (1800-3000ms) ----
+    .add({
+        targets: '.story-node-1',
+        opacity: [0, 1],
+        scale: [0.3, 1],
+        duration: 400,
+        easing: 'easeOutBack'
+    }, 1800)
+    .add({
+        targets: '.story-node-2',
+        opacity: [0, 1],
+        scale: [0.3, 1],
+        duration: 400,
+        easing: 'easeOutBack'
+    }, 1950)
+    .add({
+        targets: '.story-node-3',
+        opacity: [0, 1],
+        scale: [0.3, 1],
+        duration: 400,
+        easing: 'easeOutBack'
+    }, 2100)
+    .add({
+        targets: '.story-node-4',
+        opacity: [0, 1],
+        scale: [0.3, 1],
+        duration: 400,
+        easing: 'easeOutBack'
+    }, 2250)
+    .add({
+        targets: '.story-node-5',
+        opacity: [0, 1],
+        scale: [0.3, 1],
+        duration: 400,
+        easing: 'easeOutBack'
+    }, 2400)
+    .add({
+        targets: '.story-node-6',
+        opacity: [0, 1],
+        scale: [0.3, 1],
+        duration: 400,
+        easing: 'easeOutBack'
+    }, 2550)
+    // Particles float in
+    .add({
+        targets: '.story-particle',
+        opacity: [0, 0.7],
+        duration: 500,
+        delay: anime.stagger(60),
+        easing: 'easeOutSine'
+    }, 2200)
+
+    // ---- SCENE 4: CONNECTIONS FORM (3000-3800ms) ----
+    .add({
+        targets: '.story-connections',
+        opacity: [0, 1],
+        duration: 600,
+        easing: 'easeInOutSine'
+    }, 3000)
+    // Spark grows to become a glowing center
+    .add({
+        targets: '.story-spark',
+        r: [6, 14],
+        duration: 500,
+        easing: 'easeOutSine'
+    }, 3200)
+    .add({
+        targets: '.story-glow',
+        r: [30, 50],
+        opacity: [0.6, 0.4],
+        duration: 500,
+        easing: 'easeOutSine'
+    }, 3200)
+    .add({
+        targets: '.story-glow-2',
+        r: [55, 80],
+        opacity: [0.3, 0.2],
+        duration: 500,
+        easing: 'easeOutSine'
+    }, 3200)
+
+    // ---- SCENE 5: FIGURE RISES (3800-4600ms) ----
+    .add({
+        targets: '.story-figure',
+        opacity: [0, 1],
+        translateY: [40, 0],
+        duration: 600,
+        easing: 'easeOutQuad'
+    }, 3800)
+    // Nodes pulse with energy
+    .add({
+        targets: '.story-node circle:first-child',
+        strokeWidth: [1.5, 3, 1.5],
+        duration: 500,
+        delay: anime.stagger(70),
+        easing: 'easeInOutSine'
+    }, 4000)
+    // Particles dance
+    .add({
+        targets: '.story-particle',
+        translateX: function() { return anime.random(-15, 15); },
+        translateY: function() { return anime.random(-15, 15); },
+        duration: 600,
+        easing: 'easeInOutSine'
+    }, 3900)
+
+    // ---- SCENE 6: RAYS BURST OUTWARD (4600-5400ms) ----
+    .add({
+        targets: '.story-ray',
+        opacity: [0, 1],
+        duration: 300,
+        delay: anime.stagger(40),
+        easing: 'easeOutQuad'
+    }, 4600)
+    .add({
+        targets: '.story-spark',
+        r: [14, 20],
+        duration: 500,
+        easing: 'easeOutSine'
+    }, 4700)
+    .add({
+        targets: '.story-glow',
+        r: [50, 70],
+        opacity: [0.4, 0.5],
+        duration: 500,
+        easing: 'easeOutSine'
+    }, 4700)
+    .add({
+        targets: '.story-branch',
+        stroke: ['#3b82f6', '#f59e0b'],
+        opacity: [0.8, 1],
+        strokeWidth: [1.5, 2.5],
+        duration: 500,
+        easing: 'easeInOutSine'
+    }, 4800)
+    // Final pulse on everything
+    .add({
+        targets: '.story-connections',
+        opacity: [1, 0.8],
+        duration: 400
+    }, 5200)
+    .add({
+        targets: '.story-figure',
+        scale: [1, 1.05],
+        duration: 400,
+        easing: 'easeInOutSine'
+    }, 5200);
+
+    var totalDuration = tl.duration;
+
+    // Define scene text timings as percentages of scroll progress
+    var scenes = [
+        { text: 0, start: 0,    end: 0.18 },
+        { text: 1, start: 0.14, end: 0.32 },
+        { text: 2, start: 0.28, end: 0.50 },
+        { text: 3, start: 0.46, end: 0.64 },
+        { text: 4, start: 0.60, end: 0.78 },
+        { text: 5, start: 0.75, end: 1.00 }
+    ];
+
+    function updateStory() {
+        var rect = section.getBoundingClientRect();
+        var sectionHeight = section.offsetHeight - window.innerHeight;
+        var scrolled = -rect.top;
+        var progress = Math.max(0, Math.min(1, scrolled / sectionHeight));
+
+        // Drive the anime.js timeline by scroll progress
+        tl.seek(progress * totalDuration);
+
+        // Update progress bar
+        if (progressBar) {
+            progressBar.style.height = (progress * 100) + '%';
+        }
+
+        // Hide scroll hint after scrolling a bit
+        if (scrollHint) {
+            if (progress > 0.05) {
+                scrollHint.classList.add('hidden');
+            } else {
+                scrollHint.classList.remove('hidden');
+            }
+        }
+
+        // Show/hide scene text based on progress
+        storyTexts.forEach(function(el, i) {
+            var scene = scenes[i];
+            if (scene && progress >= scene.start && progress <= scene.end) {
+                el.classList.add('active');
+            } else {
+                el.classList.remove('active');
+            }
+        });
+    }
+
+    // Use IntersectionObserver to only track scroll when section is visible
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                if (!hasStarted) hasStarted = true;
+                window.addEventListener('scroll', onScroll, { passive: true });
+                updateStory();
+            } else {
+                window.removeEventListener('scroll', onScroll);
+            }
+        });
+    }, { threshold: 0 });
+
+    var rafId = null;
+    function onScroll() {
+        if (rafId) return;
+        rafId = requestAnimationFrame(function() {
+            updateStory();
+            rafId = null;
+        });
+    }
+
+    observer.observe(section);
+
+    // Floating particles continuous animation (runs independently)
+    anime({
+        targets: '.story-particle',
+        translateX: function() { return anime.random(-8, 8); },
+        translateY: function() { return anime.random(-8, 8); },
+        duration: function() { return anime.random(2000, 4000); },
+        direction: 'alternate',
+        loop: true,
+        easing: 'easeInOutSine',
+        delay: anime.stagger(200)
+    });
+})();
 }
