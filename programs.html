@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programs - Vishwabharati International School</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="pencil">
+                <div class="pencil-eraser"></div>
+                <div class="pencil-band"></div>
+                <div class="pencil-body"></div>
+                <div class="pencil-tip"></div>
+            </div>
+            <div class="pencil-letter">
+                <svg viewBox="0 0 80 60">
+                    <path class="pencil-letter-path" d="M15 8 L40 52 L65 8" />
+                </svg>
+            </div>
+            <div class="pencil-trail">
+                <div class="pencil-dot"></div>
+                <div class="pencil-dot"></div>
+                <div class="pencil-dot"></div>
+                <div class="pencil-dot"></div>
+                <div class="pencil-dot"></div>
+                <div class="pencil-dot"></div>
+                <div class="pencil-dot"></div>
+            </div>
+            <div class="preloader-text">Loading</div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header  header-inner" id="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <span class="logo-text">Vishwabharati <span class="logo-accent">International School</span></span>
+            </a>
+            <nav class="nav" id="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="programs.html" class="nav-link active">Programs</a>
+                <a href="events.html" class="nav-link">Events</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="contact.html" class="nav-cta">Apply Now</a>
+            </nav>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="page-hero-bg">
+            <div class="page-hero-shape page-hero-shape-1"></div>
+            <div class="page-hero-shape page-hero-shape-2"></div>
+        </div>
+        <div class="container page-hero-content">
+            <h1 data-animate="fade-up">Our Programs</h1>
+            <p data-animate="fade-up" data-delay="100">Comprehensive education pathways designed for every stage of your child's growth.</p>
+            <div class="breadcrumb" data-animate="fade-up" data-delay="200">
+                <a href="index.html">Home</a>
+                <span>&rsaquo;</span>
+                <span>Programs</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="programs section">
+        <div class="container">
+            <div class="programs-grid">
+                <div class="program-card" data-animate="fade-up" data-delay="0">
+                    <div class="program-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22c4-4 8-7.5 8-12S16.4 2 12 2 4 5.5 4 10s4 8 8 12z"/><path d="M12 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg></div>
+                    <span class="program-label">Ages 3-5</span>
+                    <h3>Pre-Primary</h3>
+                    <p>A playful and nurturing environment, building foundational skills through exploration and creativity. Our early years program focuses on sensory development, social skills, and a love for learning.</p>
+                    <a href="contact.html" class="program-link"><span>Enquire Now</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
+                </div>
+                <div class="program-card" data-animate="fade-up" data-delay="80">
+                    <div class="program-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+                    <span class="program-label">Grades 1-5</span>
+                    <h3>Primary School</h3>
+                    <p>Strong academic foundation with focus on literacy, numeracy, science, and social skills. Students develop critical thinking through hands-on activities and project-based learning.</p>
+                    <a href="contact.html" class="program-link"><span>Enquire Now</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
+                </div>
+                <div class="program-card" data-animate="fade-up" data-delay="160">
+                    <div class="program-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2v8L4.72 20.55a1 1 0 0 0 .94 1.45h12.68a1 1 0 0 0 .94-1.45L14 10V2"/><path d="M8.5 2h7M7 16h10"/></svg></div>
+                    <span class="program-label">Grades 6-8</span>
+                    <h3>Middle School</h3>
+                    <p>Challenging curriculum encouraging critical thinking, teamwork, and discovery across all disciplines. Students explore their interests through electives and clubs.</p>
+                    <a href="contact.html" class="program-link"><span>Enquire Now</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
+                </div>
+                <div class="program-card" data-animate="fade-up" data-delay="0">
+                    <div class="program-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+                    <span class="program-label">Grades 9-12</span>
+                    <h3>High School</h3>
+                    <p>College-preparatory program with advanced coursework, career guidance, and leadership opportunities. Preparing students for competitive exams and global universities.</p>
+                    <a href="contact.html" class="program-link"><span>Enquire Now</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
+                </div>
+                <div class="program-card" data-animate="fade-up" data-delay="80">
+                    <div class="program-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+                    <span class="program-label">All Grades</span>
+                    <h3>STEM Lab</h3>
+                    <p>Hands-on science, technology, engineering, and math programs with robotics and coding workshops. Innovation-focused learning for the leaders of tomorrow.</p>
+                    <a href="contact.html" class="program-link"><span>Enquire Now</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
+                </div>
+                <div class="program-card" data-animate="fade-up" data-delay="160">
+                    <div class="program-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+                    <span class="program-label">All Grades</span>
+                    <h3>Arts &amp; Sports</h3>
+                    <p>Comprehensive extracurricular programs including music, visual arts, drama, and competitive sports. Every student finds their passion.</p>
+                    <a href="contact.html" class="program-link"><span>Enquire Now</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <svg width="28" height="28" viewBox="0 0 36 36" fill="none">
+                            <path d="M18 3L2 12v3l16 9 16-9v-3L18 3z" fill="currentColor" opacity="0.9"/>
+                            <path d="M6 16.5v8L18 33l12-8.5v-8L18 25 6 16.5z" fill="currentColor" opacity="0.6"/>
+                        </svg>
+                        <span>Vishwabharati International School</span>
+                    </div>
+                    <p>Vishwa Bharathi International School, Yallatti. Empowering students with knowledge, skills, and values to succeed in a rapidly changing world.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+                        <a href="#" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+                        <a href="#" class="social-link" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75,15.02 15.5,11.75 9.75,8.48" fill="white"/></svg></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="programs.html">Programs</a>
+                    <a href="events.html">Events</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <a href="#">Student Portal</a>
+                    <a href="#">Parent Login</a>
+                    <a href="#">Academic Calendar</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Stay Updated</h4>
+                    <p>Subscribe for school updates, events, and news.</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <div class="newsletter-input-wrap">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <input type="email" placeholder="Enter your email" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Vishwabharati International School. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+    </button>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
