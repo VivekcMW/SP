@@ -743,4 +743,40 @@ if (newsletterForm) {
             newsletterForm.reset();
         }, 3000);
     });
+
+// ===== Video Modal =====
+(function() {
+    var modal = document.getElementById('videoModal');
+    var overlay = document.getElementById('videoModalOverlay');
+    var closeBtn = document.getElementById('videoModalClose');
+    var player = document.getElementById('videoPlayer');
+    var tourBtn = document.getElementById('virtualTourBtn');
+
+    if (!modal || !tourBtn) return;
+
+    function openModal() {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        if (player) player.play();
+    }
+
+    function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+        if (player) {
+            player.pause();
+            player.currentTime = 0;
+        }
+    }
+
+    tourBtn.addEventListener('click', openModal);
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (overlay) overlay.addEventListener('click', closeModal);
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+})();
 }
