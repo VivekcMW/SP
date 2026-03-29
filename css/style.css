@@ -712,16 +712,25 @@ ul { list-style: none; }
         top: auto;
         right: auto;
         transform: none;
-        width: 90%;
+        width: 80%;
         height: auto;
-        margin: -20px auto 20px;
-        opacity: 0.75;
+        margin: 0 auto 20px;
+        opacity: 0.85;
+        order: 2;
+        max-height: 300px;
+    }
+    .hero {
+        flex-direction: column;
+    }
+    .hero-content {
+        order: 1;
     }
 }
 
 @media (max-width: 480px) {
     .world-animation {
-        width: 100%;
+        width: 90%;
+        max-height: 250px;
     }
 }
 
